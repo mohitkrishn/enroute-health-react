@@ -1,5 +1,7 @@
+import { div } from "motion/react-client";
 import homepageBg from "../assets/homepage-bg.avif";
 import texture from "../assets/textture-bg.avif";
+import Hero from "../components/Hero";
 
 const Home = () => {
   return (
@@ -14,7 +16,9 @@ const Home = () => {
       <section
         className="home w-full h-screen bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${homepageBg})` }}
-      ></section>
+      >
+      <Hero />
+      </section>
     </main>
   );
 };
