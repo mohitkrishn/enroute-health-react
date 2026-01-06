@@ -2,7 +2,7 @@
 import navFont_smooth from '../assets/fonts/navlink-fonts.ttf'
 import { Menu, X } from 'lucide-react'
 import { AnimatePresence, motion } from 'motion/react'
-import { useRef, useState } from 'react'
+import { useRef, useState, useEffect } from 'react'
 import { NavLink } from 'react-router-dom';
 
 
@@ -45,7 +45,7 @@ const Navbar = () => {
 
     // when menu is closed
     closed: {
-      height: '50px',
+      height: '45px',
       width: '235px',
       borderRadius: '50px',
 
@@ -55,6 +55,28 @@ const Navbar = () => {
       }
     }
   }
+
+  //close the menu on click outside
+  const handleClickOutside = (event) => {
+    if (menuRef.current && !menuRef.current.contains(event.target)) {
+      setIsOpen(false);
+    }
+  };
+
+  //useEffect hook to add and remove event listener
+  useEffect(() => {
+    if (isOpen) {
+      document.addEventListener('click', handleClickOutside, true);
+    }
+    else {
+      document.removeEventListener('click', handleClickOutside, true);
+    }
+
+    return () => {
+      document.removeEventListener('click', handleClickOutside, true);
+    };
+  }, [isOpen]);
+
 
 
   return (
@@ -66,8 +88,7 @@ const Navbar = () => {
         animate={isOpen ? 'open' : 'closed'}
         variants={menuVariants}
         style={{ willChange: 'transform, width, height border-radius' }}
-        className="px-4 py-2.5 bg-zinc-900/50 backdrop-blur-none rounded-full flex flex-col justify-center-safe"
-      >
+        className="px-4 py-2 bg-zinc-900/50 backdrop-blur-none rounded-full flex flex-col justify-center-safe"      >
         <div
           className='logo-icon w-full flex items-center justify-between'
         >
@@ -108,7 +129,7 @@ const Navbar = () => {
               <MenuItem delay={0.20}>
                 <NavLink
                   to='/optimize'
-                  className={`py-1 rounded-md text-[1.7rem] text-white`}
+                  className={`py-1 rounded-md text-[1.35rem] text-white font-semibold`}
                   style={{ fontFamily: `${navFont_smooth}` }}
                 >
                   Optimize
@@ -118,7 +139,7 @@ const Navbar = () => {
               <MenuItem delay={0.25}>
                 <NavLink
                   to='/services'
-                  className={`py-1 rounded-md text-[1.7rem] text-white`}
+                  className={`py-1 rounded-md text-[1.35rem] text-white font-semibold`}
                   style={{ fontFamily: `${navFont_smooth}` }}
                 >
                   Services
@@ -128,7 +149,7 @@ const Navbar = () => {
               <MenuItem delay={0.30}>
                 <NavLink
                   to='/testing'
-                  className={`py-1 rounded-md text-[1.7rem] text-white`}
+                  className={`py-1 rounded-md text-[1.35rem] text-white font-semibold`}
                   style={{ fontFamily: `${navFont_smooth}` }}
                 >
                   Testing
@@ -138,7 +159,7 @@ const Navbar = () => {
               <MenuItem delay={0.35}>
                 <NavLink
                   to='/process'
-                  className={`py-1 rounded-md text-[1.7rem] text-white`}
+                  className={`py-1 rounded-md text-[1.35rem] text-white font-semibold`}
                   style={{ fontFamily: `${navFont_smooth}` }}
                 >
                   Our process
@@ -148,7 +169,7 @@ const Navbar = () => {
               <MenuItem delay={0.40}>
                 <NavLink
                   to='/membership'
-                  className={`py-1 rounded-md text-[1.7rem] text-white text-nowrap`}
+                  className={`py-1 rounded-md text-[1.35rem] text-white font-semibold text-nowrap`}
                   style={{ fontFamily: `${navFont_smooth}` }}
                 >
                   Our membership
