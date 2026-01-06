@@ -1,7 +1,11 @@
+import Home from './pages/Home'
+import Navbar from './components/Navbar'
+
 const App = () => {
-  return (
-    <div className='text-8xl text-orange-500'>App</div>
-  )
+  return <>
+    <Navbar />
+    <Home />
+  </>
 }
 
 export default App
