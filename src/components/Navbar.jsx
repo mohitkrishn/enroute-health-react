@@ -28,9 +28,9 @@ const Navbar = () => {
 
   const handleMobileMenu = () => setIsOpen(!isOpen);
 
-  // for the synchronized expand of menu bar using framer motion
+  
   const menuVariants = {
-    // when the menu is open
+   
     open: {
       width: '300px',
       height: 'auto',
@@ -43,7 +43,7 @@ const Navbar = () => {
       }
     },
 
-    // when menu is closed
+
     closed: {
       height: '45px',
       width: '235px',
@@ -56,14 +56,14 @@ const Navbar = () => {
     }
   }
 
-  //close the menu on click outside
+
   const handleClickOutside = (event) => {
     if (menuRef.current && !menuRef.current.contains(event.target)) {
       setIsOpen(false);
     }
   };
 
-  //useEffect hook to add and remove event listener
+
   useEffect(() => {
     if (isOpen) {
       document.addEventListener('click', handleClickOutside, true);
