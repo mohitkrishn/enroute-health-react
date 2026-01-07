@@ -3,7 +3,7 @@ import girlworkout from '../assets/girl-workout.webp'
 
 const Optimize = () => {
     return (
-        <scection
+        <section
             className='
             w-full 
             min-h-screen 
@@ -28,7 +28,7 @@ const Optimize = () => {
                     className='md:min-h-[clamp(886px,100vw,1061px)] object-cover object-center'
                 />
             </div>
-        </scection>
+        </section>
     )
 }
 

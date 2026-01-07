@@ -2,6 +2,7 @@ import homepageBg from '../assets/homepage-bg.avif'
 import texture from '../assets/textture-bg.avif'
 import Hero from '../components/Hero';
 import Optimize from './Optimize';
+import Services from './Services';
 
 const Home = () => {
   return (
@@ -22,6 +23,8 @@ const Home = () => {
 
       {/* optimize section */}
       <Optimize />
+      {/*Services Section*/}
+      <Services />  
     </main>
   );
 };

@@ -1,0 +1,25 @@
+import { section } from "motion/react-m";
+import React from "react";
+import Service_Top from "../components/Service_Top";
+import Service_bottom from "../components/Service_bottom";
+
+const Services = () => {
+  return (
+    <section
+      className="
+           w-full 
+            min-h-screen 
+            p-6
+            z-30 
+            bg-zinc-900 
+            flex 
+            flex-col
+            gap-10" 
+    >
+     <Service_Top/>
+     <Service_bottom/>
+    </section>
+  );
+};
+
+export default Services;
