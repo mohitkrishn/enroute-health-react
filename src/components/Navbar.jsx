@@ -28,9 +28,9 @@ const Navbar = () => {
 
   const handleMobileMenu = () => setIsOpen(!isOpen);
 
-  
+
   const menuVariants = {
-   
+
     open: {
       width: '300px',
       height: 'auto',
@@ -83,7 +83,7 @@ const Navbar = () => {
     <div
       className="fixed w-full z-40 px-6 py-5 flex justify-center"
     >
-      
+
       {/* Mobile menu with animation */}
       <motion.div
         initial={false}
@@ -175,7 +175,7 @@ const Navbar = () => {
                   className={`py-1 rounded-md text-[1.35rem] text-white font-semibold text-nowrap`}
                   style={{ fontFamily: `${navFont_smooth}` }}
                 >
-                  Our membership
+                  Membership
                 </NavLink>
               </MenuItem>
 
@@ -241,7 +241,7 @@ const Navbar = () => {
           >
             Our membership
           </NavLink>
-          
+
           <NavLink
             to='/waitlist'
             className="bg-white text-zinc-900 px-6 py-2 rounded-full font-semibold hover:bg-gray-100 transition-colors"
