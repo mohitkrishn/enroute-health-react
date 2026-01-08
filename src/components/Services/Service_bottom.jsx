@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import ServiceHeader from "./Services/ServiceHeader";
-import ServiceContent from "./Services/ServiceContent";
+import ServiceHeader from "./ServiceHeader.jsx";
+import ServiceContent from "./ServiceContent.jsx";
 import { AnimatePresence } from "motion/react";
-import { services } from "./Services/Servicedata.js";
+import { services } from "./Servicedata.js";
 
 const ServiceBottom = () => {
   const [activeIndex, setActiveIndex] = useState(null);

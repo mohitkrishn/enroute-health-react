@@ -1,8 +1,8 @@
 import React from "react";
 import { MoveRight, MoveUp } from "lucide-react";
 import { motion } from "motion/react";
-import homePage_semibold from "../assets/fonts/homepage_bold.ttf";
-import homePage_parafont from "../assets/fonts/homepage_parafont.ttf";
+import homePage_semibold from "../../assets/fonts/homepage_semibold.ttf";
+import homePage_parafont from "../../assets/fonts/homepage_parafont.ttf";
 
 const Service_Top = () => {
   const buttonVariants = {
@@ -66,7 +66,7 @@ const Service_Top = () => {
             fontFamily: `${homePage_parafont}`,
             fontSize: "1.26rem",
             lineHeight: "1.3",
-            letterSpacing:'.01rem',
+            letterSpacing: ".01rem",
             paddingTop: "1.5rem",
             paddingRight: "4rem",
           }}

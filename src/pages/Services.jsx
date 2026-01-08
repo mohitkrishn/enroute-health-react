@@ -1,7 +1,8 @@
 import { section } from "motion/react-m";
 import React from "react";
-import Service_Top from "../components/Service_Top";
-import Service_bottom from "../components/Service_bottom";
+import Service_Top from "../components/Services/Service_Top";
+import Service_bottom from "../components/Services/Service_bottom";
+
 
 const Services = () => {
   return (
@@ -17,7 +18,7 @@ const Services = () => {
             gap-10" 
     >
      <Service_Top/>
-     <Service_bottom/>
+     <Service_bottom />
     </section>
   );
 };
