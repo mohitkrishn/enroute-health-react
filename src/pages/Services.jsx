@@ -13,9 +13,7 @@ const Services = () => {
             p-6
             z-30 
             bg-zinc-900 
-            flex 
-            flex-col
-            gap-10" 
+            " 
     >
      <Service_Top/>
      <Service_bottom />

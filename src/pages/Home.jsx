@@ -3,6 +3,7 @@ import texture from '../assets/textture-bg.avif'
 import Hero from '../components/Hero';
 import Optimize from './Optimize';
 import Services from './Services';
+import Testing from './Testing';
 
 const Home = () => {
   return (
@@ -24,7 +25,9 @@ const Home = () => {
       {/* optimize section */}
       <Optimize />
       {/*Services Section*/}
-      <Services />  
+      <Services /> 
+      {/*Testing Section*/} 
+      <Testing/>
     </main>
   );
 };
