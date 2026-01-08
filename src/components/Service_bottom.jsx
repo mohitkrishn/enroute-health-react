@@ -1,9 +1,37 @@
-import React from 'react'
+import React, { useState } from "react";
+import ServiceHeader from "./Services/ServiceHeader";
+import ServiceContent from "./Services/ServiceContent";
+import { AnimatePresence } from "motion/react";
+import { services } from "./Services/Servicedata.js";
 
-const Service_bottom = () => {
+const ServiceBottom = () => {
+  const [activeIndex, setActiveIndex] = useState(null);
+
   return (
-    <div className='w-full h-full bg-amber-100'>Service_bottomdbd</div>
-  )
-}
+    <section className="w-[90%] h-full text-white m-auto">
+      {services.map((service, index) => (
+        <div
+          key={service.id}
+          className="w-full border-b cursor-pointer pb-5"
+          style={{ borderColor: "rgba(255, 255, 255, 0.2)" }}
+          onClick={() =>
+            setActiveIndex(activeIndex === index ? null : index)
+          }
+        >
+          <ServiceHeader
+            service={service}
+            isActive={activeIndex === index}
+          />
 
-export default Service_bottom
+          <AnimatePresence>
+            {activeIndex === index && (
+              <ServiceContent service={service} />
+            )}
+          </AnimatePresence>
+        </div>
+      ))}
+    </section>
+  );
+};
+
+export default ServiceBottom;
