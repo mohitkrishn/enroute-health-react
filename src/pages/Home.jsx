@@ -1,6 +1,7 @@
 import homepageBg from '../assets/homepage-bg.avif'
 import texture from '../assets/textture-bg.avif'
 import Hero from '../components/Hero';
+import Membership from './Membership';
 import Optimize from './Optimize';
 import Process from './Process';
 import Services from './Services';
@@ -29,8 +30,10 @@ const Home = () => {
       <Services /> 
       {/*Testing Section*/} 
       <Testing/>
-      {/*Our Process*/}
+      {/*Our Process Section*/}
       <Process/>
+      {/*Member-Ship Section*/}
+      <Membership/>
     </main>
   );
 };
