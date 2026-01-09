@@ -1,6 +1,7 @@
 import homepageBg from '../assets/homepage-bg.avif'
 import texture from '../assets/textture-bg.avif'
 import Hero from '../components/Hero';
+import Banner from './Banner';
 import Membership from './Membership';
 import Optimize from './Optimize';
 import Process from './Process';
@@ -34,6 +35,8 @@ const Home = () => {
       <Process/>
       {/*Member-Ship Section*/}
       <Membership/>
+      {/*Banner Section*/ }
+      <Banner/>
     </main>
   );
 };
