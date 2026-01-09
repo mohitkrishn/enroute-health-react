@@ -13,6 +13,7 @@ const Services = () => {
             p-6
             z-30 
             bg-zinc-900 
+            pb-25
             " 
     >
      <Service_Top/>

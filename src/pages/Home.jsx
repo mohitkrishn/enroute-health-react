@@ -2,6 +2,7 @@ import homepageBg from '../assets/homepage-bg.avif'
 import texture from '../assets/textture-bg.avif'
 import Hero from '../components/Hero';
 import Optimize from './Optimize';
+import Process from './Process';
 import Services from './Services';
 import Testing from './Testing';
 
@@ -28,6 +29,8 @@ const Home = () => {
       <Services /> 
       {/*Testing Section*/} 
       <Testing/>
+      {/*Our Process*/}
+      <Process/>
     </main>
   );
 };

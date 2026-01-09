@@ -10,6 +10,7 @@ const Testing = () => {
             p-6
             z-30 
             bg-zinc-900 
+            
             "
     >
         <TestingCon/>
