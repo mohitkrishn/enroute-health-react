@@ -12,6 +12,7 @@ const Process = () => {
             " 
             style={{
              background: "linear-gradient(180deg, #000 0%, #666 75%, #959595 100%)"
+
             }}
     >
     <ProcessHead/>

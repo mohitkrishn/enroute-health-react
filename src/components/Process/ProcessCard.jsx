@@ -30,7 +30,6 @@ const ProcessCard = () => {
             transition={{ duration: 0.6, ease: "easeOut" }}
             className="min-w-[50vw] h-[60vh] rounded-[3rem] bg-white flex overflow-hidden px-1 py-1"
           >
-          
             <div
               className="w-1/2 h-full pl-10 flex flex-col justify-end items-start py-10 gap-2"
               style={{ fontFamily: homePage_parafont }}
@@ -39,12 +38,10 @@ const ProcessCard = () => {
                 {e.title}
               </h3>
 
-              <h1 className="uppercase font-bold leading-[1] text-[1.9rem] tracking-tighter">
                 {e.para}
-              </h1>
+             
             </div>
 
-       
             <div className="w-1/2 h-full rounded-[3rem] overflow-hidden">
               <img
                 src={e.image}
