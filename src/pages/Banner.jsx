@@ -3,11 +3,12 @@ import BannerImg from "/src/assets/banner.avif";
 import { motion } from "motion/react";
 import { MoveRight } from "lucide-react";
 import homePage_semibold from "../assets/fonts/homepage_bold.ttf";
+import Footer from "./Footer";
 const Banner = () => {
   return (
     <section
       className=" w-full 
-            min-h-screen 
+            h-fit 
             px-5
             py-10
             z-30 
@@ -76,6 +77,7 @@ const Banner = () => {
           their performance and longevity goals.
         </p>
       </div>
+  
     </section>
   );
 };
