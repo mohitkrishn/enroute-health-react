@@ -29,7 +29,7 @@ const Optimize = () => {
             w-full 
             min-h-screen 
             px-4
-            py-8
+            pt-8
             z-30 
             bg-zinc-900 
             flex 

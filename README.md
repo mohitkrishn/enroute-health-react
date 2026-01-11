@@ -1,0 +1,12 @@
+ className="
+              flex 
+              justify-between
+                border-1 
+            w-fit
+            py-3 
+            px-5
+            rounded-full
+            bg-white
+            text-[#4b4d4a]
+            gap-8
+            "

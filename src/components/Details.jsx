@@ -1,45 +1,57 @@
 /* eslint-disable no-unused-vars */
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import homePage_semibold from '../assets/fonts/homepage_bold.ttf'
 import homePage_parafont from '../assets/fonts/homepage_parafont.ttf'
 import { MoveRight, MoveUp } from 'lucide-react';
-import { motion } from 'motion/react'
+import { motion, useInView } from 'motion/react'
 
 const Details = ({ ySpring }) => {
     const [count, setCount] = useState(0);
     const [percent, setPercent] = useState(1);
 
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setCount((prev) => {
-                if (prev >= 3) {
-                    clearInterval(interval);
-                    return prev;
-                }
-                return prev + 1;
-            })
-        }, 400)
+    const ref = useRef(null);
+    const precentRef = useRef(null);
 
-        return () => {
-            clearInterval(interval);
-        }
-    }, []);
+    const inView = useInView(ref);
+    const precentView = useInView(precentRef);
 
     useEffect(() => {
-        const interval = setInterval(() => {
-            setPercent((prev) => {
-                if (prev >= 88) {
-                    clearInterval(interval);
-                    return prev;
-                }
-                return prev + 1;
-            })
-        }, 15)
-
+        let interval;
+        if (inView) {
+            setCount(0); // Reset count every time it comes into view
+            interval = setInterval(() => {
+                setCount((prev) => {
+                    if (prev >= 3) {
+                        clearInterval(interval);
+                        return prev;
+                    }
+                    return prev + 1;
+                });
+            }, 400);
+        }
         return () => {
             clearInterval(interval);
+        };
+    }, [inView]);
+
+    useEffect(() => {
+        let interval;
+        if (precentView) {
+            setPercent(0); // Reset count every time it comes into view
+            interval = setInterval(() => {
+                setPercent((prev) => {
+                    if (prev >= 88) {
+                        clearInterval(interval);
+                        return prev;
+                    }
+                    return prev + 1;
+                });
+            }, 10);
         }
-    }, []);
+        return () => {
+            clearInterval(interval);
+        };
+    }, [precentView]);
 
 
     return (
@@ -87,7 +99,8 @@ const Details = ({ ySpring }) => {
             <div
                 className='w-full'
             >
-                <h1
+                <motion.h1
+                    ref={ref}
                     className='text-zinc-900 font-bold tracking-tighter'
                     style={{
                         fontFamily: `${homePage_semibold}`,
@@ -96,9 +109,10 @@ const Details = ({ ySpring }) => {
                     }}
                 >
                     {count}X
-                </h1>
+                </motion.h1>
 
-                <p
+                <motion.p
+                    ref={precentRef}
                     className='mt-1 text-zinc-700'
                     style={{
                         fontFamily: `${homePage_parafont}`,
@@ -106,7 +120,7 @@ const Details = ({ ySpring }) => {
                     }}
                 >
                     Your recovery and sleep performance
-                </p>
+                </motion.p>
             </div>
 
             <div

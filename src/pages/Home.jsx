@@ -1,13 +1,20 @@
 /* eslint-disable no-unused-vars */
+
 import { useRef } from 'react';
-import homepageBg from '../assets/homepage-bg.avif'
-import texture from '../assets/textture-bg.avif'
+import homepageBg from '../assets/homepage-bg.avif';
+import texture from '../assets/textture-bg.avif';
 import Hero from '../components/Hero';
+import Banner from './Banner';
+import Footer from './Footer';
+import Membership from './Membership';
 import Optimize from './Optimize';
 import { motion, useScroll, useSpring, useTransform } from 'motion/react';
+import Process from './Process';
+import Services from './Services';
+import Testing from './Testing';
+
 
 const Home = () => {
-
   const ref = useRef(null);
 
   const { scrollYProgress } = useScroll({
@@ -23,10 +30,9 @@ const Home = () => {
     stiffness: 40,
     damping: 30,
     mass: 1.5
-  })
+  });
 
   return (
-
     <main
       ref={ref}
       className="w-full relative overflow-hidden"
@@ -34,16 +40,12 @@ const Home = () => {
       {/* overlay-texture */}
       <motion.div
         className="absolute inset-0 z-50 pointer-events-none"
-        style={{
-          y: ySpring,
-        }}
+        style={{ y: ySpring }}
       >
         {/* REAL overlay layer */}
         <div
           className="w-full h-[120%] bg-center opacity-30"
-          style={{
-            backgroundImage: `url(${texture})`,
-          }}
+          style={{ backgroundImage: `url(${texture})` }}
         />
       </motion.div>
 
@@ -57,6 +59,18 @@ const Home = () => {
 
       {/* optimize section */}
       <Optimize />
+      {/*Services Section*/}
+      <Services />
+      {/*Testing Section*/}
+      <Testing />
+      {/*Our Process Section*/}
+      <Process />
+      {/*Member-Ship Section*/}
+      <Membership />
+      {/*Banner Section*/}
+      <Banner />
+      {/*Footer Section*/}
+      <Footer />
     </main>
   );
 };
