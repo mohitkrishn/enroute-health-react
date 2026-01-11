@@ -2,6 +2,14 @@ import React from "react";
 import { motion } from "motion/react";
 import { MoveRight } from "lucide-react";
 const FooterDown = () => {
+    const buttonVariants = {
+    initial: {
+      boxShadow: "0px 6px 12px #fff",
+    },
+    hover: {
+      boxShadow: "0px 10px 205px #f6f6f6",
+    },
+  };
   return (
     <section className="w-full h-[40%] text-white flex flex-row justify-between  align-top pt-15">
       <div className="text-[1.7rem] uppercase font-bold tracking-tigh ">
@@ -13,11 +21,13 @@ const FooterDown = () => {
           placeholder="your@email address"
           className="w-[20vw] px-5 py-3 border-[1px] rounded-[.2rem]"
         /></span>
-        <span>
-          <motion.button
-            whileHover="hover"
-            transition={{ type: "spring", stiffness: 300 }}
-            className="
+           <span>
+               <motion.button
+                 variants={buttonVariants}
+                 initial="initial"
+                 whileHover="hover"
+                 transition={{ type: "linear", stiffness: 300 }}
+                  className="
               flex 
               justify-between
                 border-1 
@@ -29,28 +39,28 @@ const FooterDown = () => {
             text-[#4b4d4a]
             gap-8
             "
-          >
-            <motion.span
-              variants={{
-                hover: { x: -5 },
-              }}
-              transition={{ type: "spring", stiffness: 300 }}
-              className="inline-block font-medium"
-            >
-              Sign me up
-            </motion.span>
-
-            <motion.span
-              variants={{
-                hover: { x: 5 },
-              }}
-              transition={{ type: "spring", stiffness: 300 }}
-              className="inline-block"
-            >
-              <MoveRight />
-            </motion.span>
-          </motion.button>
-        </span>
+               >
+                 <motion.span
+                   variants={{
+                     hover: { x: -5 },
+                   }}
+                   transition={{ type: "spring", stiffness: 300 }}
+                   className="inline-block font-medium"
+                 >
+                   Sign me up
+                 </motion.span>
+       
+                 <motion.span
+                   variants={{
+                     hover: { x: 5 },
+                   }}
+                   transition={{ type: "spring", stiffness: 300 }}
+                   className="inline-block"
+                 >
+                   <MoveRight />
+                 </motion.span>
+               </motion.button>
+             </span>
       </div>
     </section>
   );

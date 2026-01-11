@@ -5,6 +5,14 @@ import { MoveRight } from "lucide-react";
 import homePage_semibold from "../assets/fonts/homepage_bold.ttf";
 import Footer from "./Footer";
 const Banner = () => {
+   const buttonVariants = {
+    initial: {
+      boxShadow: "0px 6px 12px #fff",
+    },
+    hover: {
+      boxShadow: "0px 10px 205px #f6f6f6",
+    },
+  };
   return (
     <section
       className=" w-full 
@@ -30,11 +38,13 @@ const Banner = () => {
             <h1 className=" uppercase text-[4rem] leading-[.9] font-bold tracking-tight">
               interested?
             </h1>
-          <span> 
-             <motion.button
-              whileHover="hover"
-              transition={{ type: "spring", stiffness: 300 }}
-              className="
+          <span>
+        <motion.button
+          variants={buttonVariants}
+          initial="initial"
+          whileHover="hover"
+          transition={{ type: "linear", stiffness: 300 }}
+          className="
               flex 
               justify-between
                 border-1 
@@ -46,28 +56,28 @@ const Banner = () => {
             text-[#4b4d4a]
             gap-27
             "
-            >
-              <motion.span
-                variants={{
-                  hover: { x: -5 },
-                }}
-                transition={{ type: "spring", stiffness: 300 }}
-                className="inline-block font-medium"
-              >
-                Book on Calendly
-              </motion.span>
+        >
+          <motion.span
+            variants={{
+              hover: { x: -5 },
+            }}
+            transition={{ type: "spring", stiffness: 300 }}
+            className="inline-block font-medium"
+          >
+            Sign me up
+          </motion.span>
 
-              <motion.span
-                variants={{
-                  hover: { x: 5 },
-                }}
-                transition={{ type: "spring", stiffness: 300 }}
-                className="inline-block"
-              >
-                <MoveRight />
-              </motion.span>
-            </motion.button>
-          </span>
+          <motion.span
+            variants={{
+              hover: { x: 5 },
+            }}
+            transition={{ type: "spring", stiffness: 300 }}
+            className="inline-block"
+          >
+            <MoveRight />
+          </motion.span>
+        </motion.button>
+      </span>
           </div>
 
           <h1 className="uppercase font-bold text-[4.3rem] leading-[1] tracking-tight text-[#3e3e3e]">Thats just the start.</h1>

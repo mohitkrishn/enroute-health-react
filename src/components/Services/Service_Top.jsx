@@ -8,10 +8,14 @@ import homePage_parafont from "../../assets/fonts/homepage_parafont.ttf";
 
 const Service_Top = () => {
   const buttonVariants = {
+    initial: {
+      boxShadow: "0px 6px 12px #fff",
+    },
     hover: {
-      gap: "2.5rem",
+      boxShadow: "0px 10px 205px #f6f6f6",
     },
   };
+
   return (
     <section className="w-full h-fit flex flex-row  gap-4  pt-20 py-5 ">
       <div
@@ -19,25 +23,27 @@ const Service_Top = () => {
             w-[53%] 
             gap-10  "
       >
+        <span>
         <motion.button
-          whileHover="hover"
           variants={buttonVariants}
-          transition={{ type: "spring", stiffness: 300 }}
+          initial="initial"
+          whileHover="hover"
+          transition={{ type: "linear", stiffness: 300 }}
           className="bg-white  w-8/9 px-10 py-3.5  ml-20 rounded-full flex justify-between items-center text-black cursor-pointer"
         >
           <motion.span
             variants={{
-              hover: { x: -10 },
+              hover: { x: -5 },
             }}
             transition={{ type: "spring", stiffness: 300 }}
-            className="inline-block"
+            className="inline-block font-medium"
           >
-            Book on Calendly
+            Sign me up
           </motion.span>
 
           <motion.span
             variants={{
-              hover: { x: 10 },
+              hover: { x: 5 },
             }}
             transition={{ type: "spring", stiffness: 300 }}
             className="inline-block"
@@ -45,6 +51,7 @@ const Service_Top = () => {
             <MoveRight />
           </motion.span>
         </motion.button>
+      </span>
       </div>
       <div
         className="

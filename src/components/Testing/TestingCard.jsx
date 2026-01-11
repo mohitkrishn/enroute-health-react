@@ -44,11 +44,10 @@ const TestingCard = () => {
               justify-between
             border-1 
             w-full 
-           
             py-3 
             px-5
             rounded-full
-            
+            cursor-pointer
             "
             >
               <motion.span
