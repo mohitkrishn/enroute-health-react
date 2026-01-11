@@ -5,7 +5,7 @@ import homePage_parafont from '../assets/fonts/homepage_parafont.ttf'
 import { MoveRight, MoveUp } from 'lucide-react';
 import { motion } from 'motion/react'
 
-const Details = () => {
+const Details = ({ ySpring }) => {
     const [count, setCount] = useState(0);
     const [percent, setPercent] = useState(1);
 
@@ -43,11 +43,12 @@ const Details = () => {
 
 
     return (
-        <div
+        <motion.div
+            style={{ y: ySpring }}
             className='
             w-full 
-            px-6 
-            pt-10
+            px-4 
+            pt-20
             pb-13
             lg:p-20 
             z-30 
@@ -196,7 +197,7 @@ const Details = () => {
                     OPTIMIZATION MATTERS
                 </motion.h1>
             </div>
-        </div>
+        </motion.div>
     )
 }
 
