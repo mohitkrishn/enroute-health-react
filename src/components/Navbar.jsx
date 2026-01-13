@@ -1,9 +1,9 @@
 /* eslint-disable no-unused-vars */
-import navFont_smooth from "../assets/fonts/navlink-fonts.ttf";
-import { Menu, X } from "lucide-react";
-import { AnimatePresence, motion } from "motion/react";
-import { useRef, useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
+import navFont_smooth from '../assets/fonts/navlink-fonts.ttf';
+import { Menu, X } from 'lucide-react';
+import { AnimatePresence, motion } from 'motion/react';
+import { useRef, useState, useEffect } from 'react';
+import { NavLink } from 'react-router-dom';
 
 //MenuItem component for Navlinks
 const MenuItem = ({ children, delay, ...props }) => {
@@ -29,25 +29,25 @@ const Navbar = () => {
 
   const menuVariants = {
     open: {
-      width: "300px",
-      height: "auto",
-      borderRadius: "25px",
-      backgroundColor: "rgb(24 24 27)",
+      width: '300px',
+      height: 'auto',
+      borderRadius: '25px',
+      backgroundColor: 'rgb(24 24 27)',
 
       transition: {
         duration: 0.6,
-        ease: "easeInOut",
+        ease: 'easeInOut',
       },
     },
 
     closed: {
-      height: "45px",
-      width: "235px",
-      borderRadius: "50px",
+      height: '45px',
+      width: '235px',
+      borderRadius: '50px',
 
       transition: {
         duration: 0.55,
-        ease: "easeOut",
+        ease: 'easeOut',
       },
     },
   };
@@ -60,13 +60,13 @@ const Navbar = () => {
 
   useEffect(() => {
     if (isOpen) {
-      document.addEventListener("click", handleClickOutside, true);
+      document.addEventListener('click', handleClickOutside, true);
     } else {
-      document.removeEventListener("click", handleClickOutside, true);
+      document.removeEventListener('click', handleClickOutside, true);
     }
 
     return () => {
-      document.removeEventListener("click", handleClickOutside, true);
+      document.removeEventListener('click', handleClickOutside, true);
     };
   }, [isOpen]);
 
@@ -75,13 +75,9 @@ const Navbar = () => {
       {/* Mobile menu with animation */}
       <motion.div
         initial={false}
-        animate={isOpen ? "open" : "closed"}
+        animate={isOpen ? 'open' : 'closed'}
         variants={menuVariants}
-<<<<<<< HEAD
-        style={{ willChange: 'transform, width, height, border-radius' }}
-=======
-        style={{ willChange: "transform, width, height border-radius" }}
->>>>>>> 5e90b9a7ebf1d3904a52d84d41dd96d62434d33b
+style={{ willChange: 'transform, width, height, border-radius' }}
         className="px-4 py-2 bg-zinc-900/50 backdrop-blur-md rounded-full flex flex-col md:hidden"
       >
         <div className="logo-icon w-full flex items-center justify-between">
